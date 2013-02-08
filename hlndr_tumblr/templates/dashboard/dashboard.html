@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ user.username }}'s dashboard {% endblock %}
+
+{% block extra_css %}
+
+<style type="text/css">
+	#mainbody {
+		background-color:#eee;	
+	}
+
+	#blogname {
+		padding-left:20px;			
+	}
+
+	#sidebar {
+	}
+
+	.fill {
+		min-height: 100%;
+	}
+</style>
+
+{% endblock %}
+
+{% block breadcrumbs %}
+{% endblock %}
+
+{% block content %}
+
+<div class="container fill" id="mainbody">
+	<div class="row-fluid">
+		<div class="well span10">
+			<h2 id="blogname"> Dashboard </h2>
+			<div class="btn-group span12">
+				<a href="/new/text" class="btn"> Text Post </a>
+				<a href="/new/photo" class="btn"> Photo Post </a>
+				<a href="/new/quote" class="btn"> Quote Post </a>
+				<a href="/new/link" class="btn"> Link Post </a>
+				<a href="/new/chat" class="btn"> Chat Post </a>
+				<a href="/new/audio" class="btn"> Audio Post </a>
+				<a href="/new/video" class="btn"> Video Post </a>
+			</div>
+		</div>
+		<div class="well span2" id="sidebar">
+			<a href="/logout/" class="btn btn-block btn-primary"> Logout </a>
+			<a href="/{{ user.username }}/" class="btn btn-block btn-primary">Blog Page</a>
+			<a href="/{{ user.username }}/posts/" class="btn btn-block btn-primary">Posts</a>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
